@@ -33,7 +33,7 @@ class UsersController extends Controller
     public function store(StoreUserRequest $request)
     {
         $user = User::create([
-            'name' => $request->validated()['username'],
+            'name' => $request->validated()['name'],
             'email' => $request->validated()['email'],
             'password' => bcrypt($request->validated()['password']),
         ]);
